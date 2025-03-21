@@ -4,6 +4,7 @@ import requests, json
 from PIL import Image
 import base64
 from io import BytesIO
+import os
 
 def base64_to_image(base64_str):
     """将 Base64 编码转换为 PIL 图像"""
@@ -57,7 +58,7 @@ try:
     }
 
     # # #登录账号
-    login = {'uname': '3000021013','pd_mm': '949c5aa96fbaaccbf2beeee610d0da8a'}
+    login = {'uname': '3000021013','pd_mm': os.getenv("TAN_XG_PASSWORD")}
     session = requests.session()
     ##先获取一张图片
     data = json.loads(session.get(url5).text)
@@ -69,9 +70,7 @@ try:
     verify_test= session.post(url4,headers=headers2,data={'moveEnd_X':(x_pos-12),'wbili':'0.9333333333333333'})
     # print(verify_test.text)
     home_page= session.post(url3,headers=headers2,data=login)
-    print(home_page.content)
     main =session.get(url2)
-    print(main.text)
     info = json.loads(main.text)
 
     #销假
