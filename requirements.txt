@@ -1,0 +1,5 @@
+PIL
+numpy
+requests
+base64
+io
