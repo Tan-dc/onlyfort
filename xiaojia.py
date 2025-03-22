@@ -58,7 +58,7 @@ try:
     }
 
     # # #登录账号
-    login = {'uname': '3000021013','pd_mm': os.getenv('TAN_XG_PASSWORD')}
+    login = {'uname': '3000021013','pd_mm': os.getenv('PASSWORD')}
     print(1111)
     print(os.getenv('TAN_XG_PASSWORD'))
     session = requests.session()
