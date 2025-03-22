@@ -56,7 +56,7 @@ try:
     # 'Cookie':'insert_cookie=59063098; JSESSIONID=6301641DEE636034E53A550C09C3F8B7',
     'User-Agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36'
     }
-
+    print(requests.get('https://httpbin.org/ip').text)
     # # #登录账号
     login = {'uname': '3000021013','pd_mm': os.getenv('PASSWORD')}
     print(1111)
