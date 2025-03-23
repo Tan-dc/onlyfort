@@ -56,7 +56,7 @@ try:
     'User-Agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36'
     }
     #登录账号
-    login = {'uname': '3000021013','pd_mm': '949c5aa96fbaaccbf2beeee610d0da8a'}
+    login = {'uname': '3000021013','pd_mm': os.getenv('PASSWORD')}
     #a1167ae78fbb1770d6c080d8f6791a1e
     session = requests.session()
     ##先获取一张图片
