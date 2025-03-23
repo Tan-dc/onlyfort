@@ -32,4 +32,4 @@ jobs:
           pip install -r requirements.txt
 
       - name: 运行 Python 脚本
-        run: python test.py  # 替换为你的 Python 文件名
+        run: python tan_sushecheck.py  # 替换为你的 Python 文件名
