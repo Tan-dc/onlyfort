@@ -79,7 +79,7 @@ try:
             result = session.post(url6,headers=headers2,data={'operationType': '','shyj':'','pathFile':'','dm':i['DM'],'shzt':'1'})
             if "true" in result.text:
                 count=count+1
-        requests.get("https://api.day.app/xjRYpUmoXaqbP5kLvfiACT/销假成功，销假"+str(count)+"人?group=ybxj")
+    requests.get("https://api.day.app/xjRYpUmoXaqbP5kLvfiACT/销假成功，销假"+str(count)+"人?group=ybxj")
 except Exception as e:  # 捕获所有异常
     requests.get(f"https://api.day.app/xjRYpUmoXaqbP5kLvfiACT/销假失败，错误?group=ybxj")
     print(f"发生错误: {e}")
