@@ -6,7 +6,7 @@ from PIL import Image
 import base64
 from io import BytesIO
 import time
-
+import os
 def base64_to_image(base64_str):
     """将 Base64 编码转换为 PIL 图像"""
     img_data = base64.b64decode(base64_str)
