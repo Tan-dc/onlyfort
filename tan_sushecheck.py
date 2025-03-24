@@ -75,7 +75,7 @@ try:
     if result["aaData"]:
         bhgss = ""
         for i in result['aaData']:
-            if i["REDFLAG"]=="1":
+            if i["REDFLAG"]=="0":
                 print(i["SSXX"],i["DJ"],i["JCRQ"])
                 bhgss +=str(i["SSXX"])+str(i["DJ"])+str(i["JCRQ"])+"\r"
         requests.get(f"https://api.day.app/xjRYpUmoXaqbP5kLvfiACT/{bhgss}?group=ssbhg")
