@@ -8,8 +8,6 @@ on:
 jobs:
   run-script:
     runs-on: ubuntu-latest
-    env:
-      PASSWORD: ${{ secrets.TAN_XG_PASSWORD }}
     steps:
       - name: 检出代码
         uses: actions/checkout@v4
@@ -23,7 +21,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements2.txt') }}
           restore-keys: |
             ${{ runner.os }}-pip-
 
