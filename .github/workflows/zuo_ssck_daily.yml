@@ -1,4 +1,4 @@
-name: tan_ssck_daily
+name: zuo_ssck_daily
 
 on:
   schedule:
