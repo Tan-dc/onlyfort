@@ -10,7 +10,7 @@ def find_consecutive_pixels(image2):
     # 加载图像并转换为 RGB 数组
     image = Image.open(BytesIO(image2))
     ocr = ddddocr.DdddOcr(show_ad=False)
-    result = ocr.classification(image2)
+    result = ocr.classification(image)
     print(result)
     return result
 
@@ -42,6 +42,17 @@ try:
     otp = find_consecutive_pixels(data.content)
     login = {'uname': '1003436', 'pd_mm': 'c0180a8cd3bcf5bfbd079b794e87b55f', 'randnumber': otp}
     home_page = session.post(url3, headers=headers2, data=login)
+    otp_result = home_page.text
+    # 循环十次测试验证码
+    for i in range(10):
+        if "error" in otp_result:
+            print("错误")
+            print(otp_result)
+            data = session.get(url5)
+            otp = find_consecutive_pixels(data.content)
+            login = {'uname': '1003436', 'pd_mm': 'c0180a8cd3bcf5bfbd079b794e87b55f', 'randnumber': otp}
+            otp_result = session.post(url3, headers=headers2, data=login).text
+            print(login)
     query = session.get(url2).text
     # {"sEcho":1,"iDisplayStart":0,"iDisplayLength":10,"iSortColList":[],"sSortDirList":[],"iTotalRecords":6,"iTotalDisplayRecords":6,"aaData":[{"REDFLAG":"1","DF":30,"FJ":"509","ZGRQ":"2025-03-09","HAS_FILE":"1","SSXX":"南3栋 第5层 509","DJ":"基本合格","SS_M":"16462092582113791635","DM":"17414187336306342077","XQ_M":"2","LBMC":"宿舍卫生","ZG_M":"17414989550141115440","DY":null,"XN":"2024","LB":"wsjc","LC":"第5层","SSLMC":"南3栋","JCRQ":"2025-03-08"},{"REDFLAG":"1","DF":30,"FJ":"510","ZGRQ":"2025-03-15","HAS_FILE":"1","SSXX":"南3栋 第5层 510","DJ":"基本合格","SS_M":"16462092582115442920","DM":"17419166670838404489","XQ_M":"2","LBMC":"宿舍卫生","ZG_M":"17420154380643088348","DY":null,"XN":"2024","LB":"wsjc","LC":"第5层","SSLMC":"南3栋","JCRQ":"2025-03-14"},{"REDFLAG":"1","DF":1,"FJ":"505","ZGRQ":"2025-03-06","HAS_FILE":"1","SSXX":"南3栋 第5层 505","DJ":"不合格","SS_M":"16462092582118861691","DM":"17412284372754623937","XQ_M":"2","LBMC":"宿舍卫生","ZG_M":"17413126706619398205","DY":null,"XN":"2024","LB":"wsjc","LC":"第5层","SSLMC":"南3栋","JCRQ":"2025-03-06"},{"REDFLAG":"1","DF":30,"FJ":"511","ZGRQ":"2025-03-09","HAS_FILE":"1","SSXX":"南3栋 第5层 511","DJ":"基本合格","SS_M":"16462092582119386484","DM":"17414187670152718980","XQ_M":"2","LBMC":"宿舍卫生","ZG_M":"17414988516756801701","DY":null,"XN":"2024","LB":"wsjc","LC":"第5层","SSLMC":"南3栋","JCRQ":"2025-03-08"},{"REDFLAG":"1","DF":30,"FJ":"512","ZGRQ":"2025-03-14","HAS_FILE":"1","SSXX":"南3栋 第5层 512","DJ":"基本合格","SS_M":"16462092582126904901","DM":"17419168639655548748","XQ_M":"2","LBMC":"宿舍卫生","ZG_M":"17419193887579002542","DY":null,"XN":"2024","LB":"wsjc","LC":"第5层","SSLMC":"南3栋","JCRQ":"2025-03-14"},{"REDFLAG":"1","DF":30,"FJ":"512","ZGRQ":"2025-03-06","HAS_FILE":"1","SSXX":"南3栋 第5层 512","DJ":"基本合格","SS_M":"16462092582126904901","DM":"17412285466642407747","XQ_M":"2","LBMC":"宿舍卫生","ZG_M":"17412431258607299710","DY":null,"XN":"2024","LB":"wsjc","LC":"第5层","SSLMC":"南3栋","JCRQ":"2025-03-06"}]}'''
     result = json.loads(query)
