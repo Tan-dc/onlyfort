@@ -2,7 +2,7 @@ name: tan_ssck_daily
 
 on:
   schedule:
-    - cron: '0 0-3,7-10 * * *'  # 每天 9 点（UTC 时间 -8 小时）
+    - cron: '0 0-3,7-10,12,13 * * *'  # 每天 9 点（UTC 时间 -8 小时）
   workflow_dispatch:  # 允许手动触发
 
 jobs:
