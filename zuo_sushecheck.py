@@ -65,10 +65,13 @@ try:
                 bhgss += str(i["SSXX"]) + str(i["DJ"]) + str(i["JCRQ"]) + "\r"
         if ""!=bhgss:
             requests.get(f"https://www.pushplus.plus/send?token=8e7651b0d68a41cfbf46a1da55044466&title=无不合格宿舍&content=1&template=html")
+            print(1)
         requests.get(f"https://www.pushplus.plus/send?token=8e7651b0d68a41cfbf46a1da55044466&title=有不合格宿舍+&content={bhgss}&template=html")
+        print(2)
     else:
         print("wu")
         requests.get(f"https://www.pushplus.plus/send?token=8e7651b0d68a41cfbf46a1da55044466&title=无不合格宿舍&content=1&template=html")
+        print(3)
 
 except Exception as e:  # 捕获所有异常
         requests.get("https://www.pushplus.plus/send?token=8e7651b0d68a41cfbf46a1da55044466&title= 查询错误&content=1&template=html")
