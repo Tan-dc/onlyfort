@@ -1,0 +1,22 @@
+import pandas as pd
+from datetime import datetime
+import requests
+# 假设 csv 文件名为 data.csv，包含 "姓名" 和 "出生日期" 两列
+# 出生日期格式假设为 YYYY-MM-DD
+df = pd.read_csv("/Users/tan/Downloads/birthday_info.csv")
+
+# 获取今天的月-日
+today = datetime.today().strftime("%m-%d")
+# today = "01-01"
+print(datetime.today())
+print(today)
+for _, row in df.iterrows():
+    try:
+        # 将出生日期转为 datetime 对象
+        birthday = datetime.strptime(row["出生日期"], "%Y-%m-%d")
+        # 比较月-日
+        if birthday.strftime("%m-%d") == today:
+            requests.get("https://api.day.app/xjRYpUmoXaqbP5kLvfiACT/"+f"{row['姓名']} happy birthday!")
+            print(f"{row['姓名']} happy birthday!")
+    except Exception as e:
+        print(f"跳过无效日期: {row['出生日期']}")
