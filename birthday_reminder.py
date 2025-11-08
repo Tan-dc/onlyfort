@@ -5,7 +5,6 @@ from zoneinfo import ZoneInfo
 # 假设 csv 文件名为 data.csv，包含 "姓名" 和 "出生日期" 两列
 # 出生日期格式假设为 YYYY-MM-DD
 df = pd.read_csv("birthday_info.csv")
-print(df)
 # 获取今天的月-日
 beijing_tz = ZoneInfo('Asia/Shanghai')
 today = datetime.now(beijing_tz).strftime("%m-%d")
