@@ -10,7 +10,7 @@ print(df)
 beijing_tz = ZoneInfo('Asia/Shanghai')
 today = datetime.now(beijing_tz).strftime("%m-%d")
 # today = "01-01"
-print(datetime.now(beijing_tz)))
+print(datetime.now(beijing_tz))
 count = 0
 for _, row in df.iterrows():
     try:
