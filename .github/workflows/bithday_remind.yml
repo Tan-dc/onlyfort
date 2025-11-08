@@ -29,7 +29,7 @@ jobs:
 
       - name: 安装依赖
         run: |
-          pip install -r requirements.txt
+          pip install -r requirements3.txt
 
       - name: 运行 Python 脚本
         run: python birthday_reminder.py  # 替换为你的 Python 文件名
