@@ -1,0 +1,35 @@
+name: tan_bithday
+
+on:
+  schedule:
+    - cron: '0 0-3,7-10,12,13 * * *'  # 每天 9 点（UTC 时间 -8 小时）
+  workflow_dispatch:  # 允许手动触发
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+    env:
+      PASSWORD: ${{ secrets.TAN_XG_PASSWORD }}
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 设置 Python 环境
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: 缓存 pip 依赖
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      - name: 安装依赖
+        run: |
+          pip install -r requirements3.txt
+
+      - name: 运行 Python 脚本
+        run: python birthday_reminder.py  # 替换为你的 Python 文件名
