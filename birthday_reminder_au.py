@@ -8,7 +8,7 @@ df = pd.read_csv("birthday_info.csv")
 print(df)
 # 获取今天的月-日
 beijing_tz = ZoneInfo('Australia/Melbourne')
-today = datetime.today().strftime("%m-%d")
+today = datetime.now(beijing_tz).strftime("%m-%d")
 
 # today = "01-01"
 print(datetime.now(beijing_tz).strftime("%m-%d"))
