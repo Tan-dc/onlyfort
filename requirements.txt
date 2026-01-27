@@ -1,4 +1,4 @@
 pillow
 numpy
 requests
-ddddocr
+ddddocr==1.5.6
