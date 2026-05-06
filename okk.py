@@ -18,3 +18,4 @@ try:
         requests.get("https://api.day.app/xjRYpUmoXaqbP5kLvfiACT/"+"Low"+first_name+"\t"+price+"?group=okk")
 except Exception as e:
     requests.get("https://api.day.app/xjRYpUmoXaqbP5kLvfiACT/okk错误：" + str(e) + "?group=okk")
+
