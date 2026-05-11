@@ -81,7 +81,7 @@ try:
                 bhgss +=str(i["SSXX"])+str(i["DJ"])+str(i["JCRQ"])+"\r"
         requests.get(f"https://api.day.app/xjRYpUmoXaqbP5kLvfiACT/{bhgss}?group=ssbhg")
     else:
-        requests.get(f"https://api.day.app/xjRYpUmoXaqbP5kLvfiACT/无不合格宿舍?group=ssbhg")
+        requests.get(f"https://api.day.app/xjRYpUmoXaqbP5kLvfiACT/2026无不合格宿舍?group=ssbhg")
 except Exception as e:  # 捕获所有异常
     requests.get("https://api.day.app/xjRYpUmoXaqbP5kLvfiACT/查询错误，错误:?group=ssbhg")
     print(e)
