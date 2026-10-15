@@ -38,20 +38,20 @@ try:
     print (time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()) )
     # requests.get("https://api.day.app/xjRYpUmoXaqbP5kLvfiACT/2024-09-14-808-不合格")
     ##提交post请求
-    url = 'http://xg.hieu.edu.cn/gygl/index?'
+    url = 'https://xg.hieu.edu.cn/gygl/index?'
     # 获取不合格
-    url2 = 'http://xg.hieu.edu.cn/gygl/content/tabledata/dormManage/hygiene/hygieneRectify?iSortingCols=1&identity=fdy&status=0'
+    url2 = 'https://xg.hieu.edu.cn/gygl/content/tabledata/dormManage/hygiene/hygieneRectify?iSortingCols=1&identity=fdy&status=0'
     ##登陆url
-    url3 = 'http://xg.hieu.edu.cn/gygl/website/login'
+    url3 = 'https://xg.hieu.edu.cn/gygl/website/login'
 
     ##测试验证码结果url
-    url4 = 'http://xg.hieu.edu.cn/gygl/website/verify/image/result'
+    url4 = 'https://xg.hieu.edu.cn/gygl/website/verify/image/result'
 
     ##获取验证码图片
-    url5 = 'http://xg.hieu.edu.cn/gygl/website/verify/image'
+    url5 = 'https://xg.hieu.edu.cn/gygl/website/verify/image'
 
     # 同意销假url
-    url6 = "http://xg.hieu.edu.cn/content/audit/audit/auditPass?"
+    url6 = "https://xg.hieu.edu.cn/content/audit/audit/auditPass?"
     headers2={
     'User-Agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36'
     }
